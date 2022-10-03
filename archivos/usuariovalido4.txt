@@ -1,0 +1,4 @@
+Mensaje: SELECT p1.id_pagina, p1."Nombre_Pagina", p1."Descripcion", p1."Url", p1."Activo"
+				FROM cantv."paginas" p1 inner join cantv."pagina_perfil" p2
+				on p1.id_pagina=p2.id_pagina
+				WHERE p2."id_perfil"=1 AND p2.inicio=1

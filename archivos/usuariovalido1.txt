@@ -1,0 +1,12 @@
+Mensaje: SELECT us.id_usuario id_usuario, us.id_perfil id_perfil, p.nombre_perfil nombre_perfil, us.id_gerencia id_gerencia, 
+	ger.nb_gerencia gerencia, us.id_unid_admin id_unid_admin, ua.nombe unidad_administrativa, us.id_tipo_doc_ident id_tipo_doc_ident, 
+	tdi.nemonico_doc tipo_doc_identidad, us.doc_identidad doc_identidad, us.nombres nombres, us.apellidos apellidos, us.f_nac f_nac, 
+	us.f_creacion f_creacion, us.f_modif f_modif, us.id_us_mod id_us_mod, us.id_jerarquia id_jerarquia, 
+	jq.nombre_jerarquia nombre_jerarquia,  us.clave clave, us.nb_usuario nb_usuario 
+	FROM cantv."Usuarios" us
+	INNER JOIN cantv."Perfiles" p ON us.id_perfil=p.id_perfil
+	INNER JOIN cantv."gerencia" ger ON us.id_gerencia=ger.id_gerencia
+	INNER JOIN cantv."Unidad_Administrativa" ua ON us.id_unid_admin=ua.id_unid_admin
+	INNER JOIN cantv."Tipo_Doc_Identidad" tdi ON us.id_tipo_doc_ident=tdi.id_tipo_doc_ident
+	INNER JOIN cantv."Jerarquias" jq ON us.id_jerarquia=jq.id_jerarquia
+	WHERE us.nb_usuario='prueba1'

@@ -1,0 +1,8 @@
+Mensaje: SELECT ind.id_indicador,ind.nb_indicador, di.cantidad as valor, di.anio, 
+	di.mes as mes_n, m1.nb_mes as mes, di.id_tipo
+	FROM cantv.datos_indicador as di, cantv.indicadores as ind, cantv.meses as m1
+	WHERE di.id_indicador=ind.id_indicador
+	AND di.mes=m1.id_mes
+	AND di.anio='2021' 
+	AND ind.id_indicador='11' 
+	ORDER BY di.mes
